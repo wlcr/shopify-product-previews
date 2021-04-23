@@ -2,14 +2,16 @@
   "name": "Product Previews",
   "description": "Get Shopify Product Previews in a dev theme",
   "version": "1.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "author": "Will Christenson",
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "background.js"
   },
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
-    "*://*.shopifypreview.com/*"
+    "webRequest"
+  ],
+  "host_permissions": [
+    "*://myshopify.com/*",
+    "*://*/*"
   ]
 }
