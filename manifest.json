@@ -7,9 +7,15 @@
   "background": {
     "scripts": ["background.js"]
   },
+  "content_scripts": [{
+    "matches": ["*://*.shopifypreview.com/*"],
+    "js": ["content-script.js"],
+    "run_at": "document_start"
+  }],
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "*://*.shopifypreview.com/*"
+    "*://*.shopifypreview.com/*",
+    "*://*/*"
   ]
 }
