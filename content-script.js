@@ -38,8 +38,10 @@ document.addEventListener('ShopifyProductPreviewsGetShopUrl', function(e) {
   chrome.runtime.sendMessage({ Shopify: JSON.parse(e.detail) }, function(shopifyInfo) {
     // console.log('Response from the Extension?', shopifyInfo);
     const previewUrl = `//${shopifyInfo.Shopify.shop}/products_preview?preview_key=${shopifyInfo.previewKey}`;
-    window.location.replace(previewUrl);
+
     console.log(`Preview URL is ${shopifyInfo.Shopify.shop}/products_preview?preview_key=${shopifyInfo.previewKey}`);
+
+    window.location.replace(previewUrl);
   });
 });
 

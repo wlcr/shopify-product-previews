@@ -107,7 +107,15 @@ chrome.runtime.onMessage.addListener(
     // console.log(shopifyInfo);
     if (sender.tab && request.Shopify) {
       shopifyInfo.Shopify = request.Shopify;
-      console.log(shopifyInfo);
+      // console.log(shopifyInfo);
+
+      chrome.notifications.create('productPreviewNotification', {
+        type: 'basic',
+        iconUrl: 'shopify-logo.png',
+        title: 'Redirected to your theme & product preview',
+        message: `This product preview has been redirected to the theme preview for ${shopifyInfo.Shopify.theme.name}`,
+        priority: 2
+      });
       
       sendResponse(shopifyInfo);
     }

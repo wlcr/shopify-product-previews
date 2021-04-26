@@ -15,6 +15,7 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
+    "notifications",
     "*://*.shopifypreview.com/*",
     "*://*/*"
   ]
